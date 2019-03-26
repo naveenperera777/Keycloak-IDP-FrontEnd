@@ -1,0 +1,6 @@
+testdata:[{id:1,name:'naveen'},
+               {id:2, name:'perera'}]
+
+               <ul>
+        { this.state.testdata.map((d) => <li key={ d.id }>{ d.n }</li>) }
+        </ul>
