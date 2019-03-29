@@ -5,7 +5,7 @@ class Welcome extends Component {
   render() {
     return (
       <div className="Welcome">
-        <p>This is your public-facing component.</p>
+        <h2>Welcome to NDB User Management Portal!</h2>
       </div>
     );
   }

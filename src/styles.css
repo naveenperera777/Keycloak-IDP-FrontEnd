@@ -1,9 +1,12 @@
 
 body{
     font-family: Raleway;
-    color: #555;
-    background: #f1eded;
+    color: rgb(5, 5, 5);
+    background: #fffefe;
     margin: 10px 30px;
+}
+#navbar-nav mr-auto{
+    color: black;
 }
 #homepage{
     max-width: 800px;
@@ -25,7 +28,7 @@ label{
     font-weight: bold;
 }
 .title{
-    color: #fff;
+    color:red;
     text-align: center;
     font-size: 48px;
 }
@@ -38,7 +41,7 @@ form{
 }
 input[type="submit"]{
     background: #555;
-     color: #fff;
+     color: rgb(5, 5, 5);
      border: 0;
      padding: 10px;
      font-size: 18px;
@@ -54,7 +57,7 @@ ul{
 }
 li{
     padding: 15px 0;
-    background: #eee;
+    background: whitesmoke;
     list-style-type: none;
     font-size: 18px;
     font-weight: bold;
