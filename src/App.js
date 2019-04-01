@@ -31,14 +31,15 @@ class App extends Component {
     //   </div>
     // </BrowserRouter>
     <Router>
-    <div>           
-      <ul className="navbar-nav mr-auto">
+    <div className="navbar">           
+      <ul className="topnav">
         <li><Link to={'/'} className="nav-link"> NDB Home</Link></li>
         <li><Link to={'/secured'} className="nav-link">Authorize Users</Link></li>
         <li><Link to={'/usermanagement'} className="nav-link">User Management</Link></li>
       </ul>
       
       <hr />
+      
       <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/secured' component={Secured} />

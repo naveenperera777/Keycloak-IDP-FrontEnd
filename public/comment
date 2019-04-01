@@ -1,0 +1,43 @@
+
+    // var options = {
+    //     // url: 'http://localhost:8080/auth/admin/realms/isam/users',
+    //     url: 'http://localhost:7000/users',
+    //     headers: {
+    //     // 'Authorization': ' Bearer ' + this.props.token ,
+    //     // 'Access-Control-Allow-Origin': '*',
+    //     // 'mode':'no-cors'
+    //     // "Access-Control-Allow-Credentials": true,
+    //     // "Access-Control-Allow-Origin": "*"
+    //     // "mode":"no-cors"
+    //     // "Content-Type": "application/json"
+
+
+    //     }
+    //   };       
+    //   function callback(error, response, body) {
+    //     if (!error && response.statusCode == 200) {
+    //       var info = JSON.parse(body);
+    //       console.log("it works" , info.rows);
+    //     //   this.setState({oracleData:info.rows});
+          
+    //     }
+    //   }       
+    //   request.get(options, callback);
+
+
+    // {headers:{
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Access-Control-Allow-Methods': 'HEAD, GET, POST, PUT, PATCH, DELETE',
+    //     'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+    // }}
+
+    // axios.get('http://localhost:8080/auth/admin/realms/isam/users' ,
+    // { headers: { 'Authorization': ' Bearer ' + this.props.token } })
+    
+    // .then(res => this.setState({ userData: res.data },
+    //     function () {
+            
+    // console.log("NewAuthDidMount",this.state.userData);
+            
+    //    }));
+        
