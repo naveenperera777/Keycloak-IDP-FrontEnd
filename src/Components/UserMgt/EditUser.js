@@ -28,15 +28,16 @@ componentDidMount = () => {
 }
 
 
-handleUserEdit = () => {
-    axios.get('http://localhost:7000/edit')
-    .then((res) => {
-        alert("User Edited Successfully");
-      console.log("User Deleted ", res);
-    })
-    .catch((err) => {
-      console.log("Error: ", err);
-    })
+handleUserEdit = (editUser) => {
+  console.log(editUser);
+    // axios.get('http://localhost:7000/edit')
+    // .then((res) => {
+    //     alert("User Edited Successfully");
+    //   console.log("User Edited ", res);
+    // })
+    // .catch((err) => {
+    //   console.log("Error: ", err);
+    // })
 
         }
 
@@ -46,9 +47,9 @@ render() {
             <h1>Delete Users</h1>            
             <ul>
                 {this.state.keycloakUsers.map((user) =>
-                 <li key={user.ID}>
-                    <label>{user.USERNAME}</label>
-                    <Button variant="contained" color="default" onClick={this.handleUserEdit}>
+                 <li key={user.id}>
+                    <label>{user.username}</label>
+                    <Button variant="contained" color="default" onClick={() => this.handleUserEdit(user.username)}>
                     Edit User    
                     </Button>
                  </li>   )}

@@ -70,40 +70,72 @@ console.log("NewMount",this.props.token)
    
 }  
 
-authorizeCreateUser = () => { 
-  axios.post('http://localhost:7000/users/auth' , {
-    headers:{
-      "token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4U0JtN2NDMHZ0WFdubXRNOUhwX1F1OU5Scnh1bF9jdG9rdkRyRVJhdG8wIn0.eyJqdGkiOiJjZmYyYWUxMS1kMDUwLTQwM2YtOGFkNy1kN2JjNDFkMTU0NGYiLCJleHAiOjE1NTM4ODc3MTUsIm5iZiI6MCwiaWF0IjoxNTUzODU4OTgzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvaXNhbSIsImF1ZCI6ImlucHV0LWF1dGgtYXBwIiwic3ViIjoiNzVkNDFkYmUtMjgxNi00MDU1LThiYWUtODJiOTUwNjU5ZDM3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiaW5wdXQtYXV0aC1hcHAiLCJub25jZSI6IjBkMTg4MDY5LTkxOTUtNDgzNC1hNzRkLTcwOGI5OGRjZWFlZiIsImF1dGhfdGltZSI6MTU1Mzg1MTcxNSwic2Vzc2lvbl9zdGF0ZSI6IjQ3N2UxYmQ5LTgyYjktNDA5ZC05MzAyLTQ3OTBjMGQyNDBiNSIsImFjciI6IjAiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSZW1vdmVyIiwiYXV0aG9yaXplciIsIkNSRUFURV9VU0VSIiwiQXV0aG9yaXplciIsImlucHV0dGVyIiwiQWRkZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImlzYW0xIn0.OKS_EcEK-naWMxiJiHrzY4bGJ0SkykaSrzErdeVIuz1Lf8KvCAioKAnueY_VgwFCaXf-1C1r8l5eF5VVu8bd7dqJL0Anob52iS_lLFdXEqudOec9MWi_pqEfeHjFU0McAT39DlWfJhpRbh3byisJ-IB1XcBSiuZ02hdDPEPcZudWcFwJKY3M1dikf7vsBxZwcgH-QuY3KiCJYc2U8pr4DaEF9nLSxLR6dg1xTD7nykfK3P3jqa9yEV-UmpNhl03WXPAoYYd8JY1h1K6UmcU3MUsxJX2aP_32r4vCw_-Fs6alpnT1PDEsYe6WRr0dF6N2JIQObIq6JNHc2tL4mvXF5A",
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE'
-   
-    },
-    body:{
-      "USERNAME": "Howard",
-      "EMAIL": "howardatme@.com",
-      "CREATOR": "isam",
-      "ID": 21,
-      "NAME": "tim",
-      "EPFNO": "11dreqfds",
-      "BRANCH": "branch2",
-      "DEPARTMENT": "dep3",
-      "MOBILE_NUMBER": "07779677",
-      "START_DATE": "2018-12-31T18:30:00.000Z",
-      "END_DATE": "2019-12-31T18:30:00.000Z",
-      "USER_STATUS": "true",
-      "PASSWORD": "pass",
-      "USER_ROLE": "inputter",
-      "AUTH_TYPE": "CREATE_USER",
-      "STATE": 1
-    }
-  })
+authorizeCreateUser = (authorizeuser) => { 
+
+  
+  //   body:{
+      // "USERNAME": "Howard",
+      // "EMAIL": "howardatme@.com",
+      // "CREATOR": "isam",
+      // "ID": 21,
+      // "NAME": "tim",
+      // "EPFNO": "11dreqfds",
+      // "BRANCH": "branch2",
+      // "DEPARTMENT": "dep3",
+      // "MOBILE_NUMBER": "07779677",
+      // "START_DATE": "2018-12-31T18:30:00.000Z",
+      // "END_DATE": "2019-12-31T18:30:00.000Z",
+      // "USER_STATUS": "true",
+      // "PASSWORD": "pass",
+      // "USER_ROLE": "inputter",
+      // "AUTH_TYPE": "CREATE_USER",
+      // "STATE": 1
+    
+    console.log("auth",authorizeuser);
+
+    var postData = {
+      "auth_type":"CREATE_USER",
+        "id":authorizeuser.ID,
+        "username":authorizeuser.USERNAME,
+        "email":authorizeuser.email,
+        "epf-number":authorizeuser.EPFNO,
+        "branch":authorizeuser.BRANCH,
+        "department":authorizeuser.DEPARTMENT,
+        "mobile_number":authorizeuser.MOBILE_NUMBER,
+        "start_date":authorizeuser.START_DATE,
+        "end_date":authorizeuser.END_DATE,
+        "password":authorizeuser.PASSWORD,
+        "name":authorizeuser.NAME,
+        "userRole":[authorizeuser.USER_ROLE],
+        "creator":"d" 
+          
+    };
+    
+    let axiosConfig = {
+      headers: {
+          "token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4U0JtN2NDMHZ0WFdubXRNOUhwX1F1OU5Scnh1bF9jdG9rdkRyRVJhdG8wIn0.eyJqdGkiOiIzOTY5Nzg3NS0zYzQ5LTQxOTUtYTI3Yy1hYmU0YzYyYTJjZGEiLCJleHAiOjE1NTQyMTQ5MjAsIm5iZiI6MCwiaWF0IjoxNTU0MTc5NjI5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvaXNhbSIsImF1ZCI6ImlucHV0LWF1dGgtYXBwIiwic3ViIjoiNzVkNDFkYmUtMjgxNi00MDU1LThiYWUtODJiOTUwNjU5ZDM3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiaW5wdXQtYXV0aC1hcHAiLCJub25jZSI6ImNlZDFiZjBhLTM3MGItNDIwMi04ZjQxLTAxM2U4ZWRjMTNjMyIsImF1dGhfdGltZSI6MTU1NDE3ODkyMCwic2Vzc2lvbl9zdGF0ZSI6IjliOTUzNTkyLWI3MDktNDQxMi05OTY1LTY2OTUwMmM2Zjk2MCIsImFjciI6IjAiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSZW1vdmVyIiwidmlld1VzZXJzIiwiYXV0aG9yaXplciIsIkNSRUFURV9VU0VSIiwiQXV0aG9yaXplciIsImRlbGV0ZVVzZXJzIiwiaW5wdXR0ZXIiLCJBZGRlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJyZWFsbS1hZG1pbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiaXNhbTEifQ.kDtREiZuz1bZ84NNOVKtKr262GxxLF8kLKtRzKSD2BID7WSe4R7-nq-gYZhd5b0k1dzaO8bDPoyG33PeIGk2vOzIJGR90lEq57yXa46ALTuvyKj5K5t9vZDL-Wl2UyPWELDvugErqGenBRnwdmxTA1iYjuBuODhiLXdIyhB-z6Vejew7ptXfIvTQzLqKnoik4k4vyVbvOio2pJjwLlbRsNrjXZK6UgIqf-tTC9_HorR-CHaIQLBT5Nl3ZyN8TbAsKF1ZArqlYQ8V7ugAwOvd_f5DU8b2412BJjGyxmJmfsw174veffpBWTpZbtdfpJD9vdORgL7brh2sBohuTpet7Q",
+          'Content-Type': 'application/json;charset=UTF-8',
+          "Access-Control-Allow-Origin": "*",
+      }
+    };
+    
+    axios.post('http://localhost:7000/users/auth', postData, axiosConfig)
     .then((res) => {
-      alert(res);
+      console.log("RESPONSE RECEIVED: ", res);
     })
     .catch((err) => {
       alert(err);
     })
-  }
+
+
+
+    }
+    
+
+
+
+
+  
 
 authorizeEditUser = () => {
   axios.post('http://localhost:7000/')
@@ -115,16 +147,47 @@ authorizeEditUser = () => {
     })
 }  
 
-authorizeDeleteUser = () => {
-axios.get('http://localhost:7000/')
+authorizeDeleteUser = (deleteUser) => {
+  console.log(deleteUser);
+// axios.post('http://localhost:7000/users/auth', {  
+//   data : {
+//     "auth_type":"DELETE_USER",
+// 	  "username":"rick"
+//   } ,
+//   headers:{
+//     'Content-Type': 'application/json',
+//     'token':'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4U0JtN2NDMHZ0WFdubXRNOUhwX1F1OU5Scnh1bF9jdG9rdkRyRVJhdG8wIn0.eyJqdGkiOiIzOTY5Nzg3NS0zYzQ5LTQxOTUtYTI3Yy1hYmU0YzYyYTJjZGEiLCJleHAiOjE1NTQyMTQ5MjAsIm5iZiI6MCwiaWF0IjoxNTU0MTc5NjI5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvaXNhbSIsImF1ZCI6ImlucHV0LWF1dGgtYXBwIiwic3ViIjoiNzVkNDFkYmUtMjgxNi00MDU1LThiYWUtODJiOTUwNjU5ZDM3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiaW5wdXQtYXV0aC1hcHAiLCJub25jZSI6ImNlZDFiZjBhLTM3MGItNDIwMi04ZjQxLTAxM2U4ZWRjMTNjMyIsImF1dGhfdGltZSI6MTU1NDE3ODkyMCwic2Vzc2lvbl9zdGF0ZSI6IjliOTUzNTkyLWI3MDktNDQxMi05OTY1LTY2OTUwMmM2Zjk2MCIsImFjciI6IjAiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSZW1vdmVyIiwidmlld1VzZXJzIiwiYXV0aG9yaXplciIsIkNSRUFURV9VU0VSIiwiQXV0aG9yaXplciIsImRlbGV0ZVVzZXJzIiwiaW5wdXR0ZXIiLCJBZGRlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJyZWFsbS1hZG1pbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiaXNhbTEifQ.kDtREiZuz1bZ84NNOVKtKr262GxxLF8kLKtRzKSD2BID7WSe4R7-nq-gYZhd5b0k1dzaO8bDPoyG33PeIGk2vOzIJGR90lEq57yXa46ALTuvyKj5K5t9vZDL-Wl2UyPWELDvugErqGenBRnwdmxTA1iYjuBuODhiLXdIyhB-z6Vejew7ptXfIvTQzLqKnoik4k4vyVbvOio2pJjwLlbRsNrjXZK6UgIqf-tTC9_HorR-CHaIQLBT5Nl3ZyN8TbAsKF1ZArqlYQ8V7ugAwOvd_f5DU8b2412BJjGyxmJmfsw174veffpBWTpZbtdfpJD9vdORgL7brh2sBohuTpet7Q'
+//   }
+// })
+// .then((res) => {
+// alert(res);
+// })
+// .catch((err) => {
+// alert(err);
+// })
+
+var postData = {
+  "auth_type":"DELETE_USER",
+    "username":deleteUser
+    
+};
+
+let axiosConfig = {
+  headers: {
+       "token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4U0JtN2NDMHZ0WFdubXRNOUhwX1F1OU5Scnh1bF9jdG9rdkRyRVJhdG8wIn0.eyJqdGkiOiIzOTY5Nzg3NS0zYzQ5LTQxOTUtYTI3Yy1hYmU0YzYyYTJjZGEiLCJleHAiOjE1NTQyMTQ5MjAsIm5iZiI6MCwiaWF0IjoxNTU0MTc5NjI5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvaXNhbSIsImF1ZCI6ImlucHV0LWF1dGgtYXBwIiwic3ViIjoiNzVkNDFkYmUtMjgxNi00MDU1LThiYWUtODJiOTUwNjU5ZDM3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiaW5wdXQtYXV0aC1hcHAiLCJub25jZSI6ImNlZDFiZjBhLTM3MGItNDIwMi04ZjQxLTAxM2U4ZWRjMTNjMyIsImF1dGhfdGltZSI6MTU1NDE3ODkyMCwic2Vzc2lvbl9zdGF0ZSI6IjliOTUzNTkyLWI3MDktNDQxMi05OTY1LTY2OTUwMmM2Zjk2MCIsImFjciI6IjAiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSZW1vdmVyIiwidmlld1VzZXJzIiwiYXV0aG9yaXplciIsIkNSRUFURV9VU0VSIiwiQXV0aG9yaXplciIsImRlbGV0ZVVzZXJzIiwiaW5wdXR0ZXIiLCJBZGRlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJyZWFsbS1hZG1pbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiaXNhbTEifQ.kDtREiZuz1bZ84NNOVKtKr262GxxLF8kLKtRzKSD2BID7WSe4R7-nq-gYZhd5b0k1dzaO8bDPoyG33PeIGk2vOzIJGR90lEq57yXa46ALTuvyKj5K5t9vZDL-Wl2UyPWELDvugErqGenBRnwdmxTA1iYjuBuODhiLXdIyhB-z6Vejew7ptXfIvTQzLqKnoik4k4vyVbvOio2pJjwLlbRsNrjXZK6UgIqf-tTC9_HorR-CHaIQLBT5Nl3ZyN8TbAsKF1ZArqlYQ8V7ugAwOvd_f5DU8b2412BJjGyxmJmfsw174veffpBWTpZbtdfpJD9vdORgL7brh2sBohuTpet7Q",
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+  }
+};
+
+axios.post('http://localhost:7000/users/auth', postData, axiosConfig)
 .then((res) => {
-alert(res);
+  console.log("RESPONSE RECEIVED: ", res);
 })
 .catch((err) => {
-alert(err);
-})}
- 
-   
+  alert("404, User not found in the keyclaok database");
+})
+}
 
 render(){
     return(
@@ -137,7 +200,7 @@ render(){
         {(() => {
         switch(user.AUTH_TYPE) {
           case 'CREATE_USER':            
-            return <Button variant="contained" color="primary" onClick={this.authorizeCreateUser}>
+            return <Button variant="contained" color="primary" onClick={() => this.authorizeCreateUser(user)}>
             Authorize Create   
             </Button>
           case 'EDIT_USER':
@@ -145,7 +208,7 @@ render(){
             Authorize Edit
             </Button>
           case 'DELETE_USER':
-          return <Button variant="contained" color="secondary" onClick={this.authorizeDeleteUser}>
+          return <Button variant="contained" color="secondary" onClick={() => this.authorizeDeleteUser(user.USERNAME)}>
           Authorize Delete
           </Button>        
         }
