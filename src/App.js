@@ -9,6 +9,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import {Form, FormControl , Navbar, Button, Nav} from 'react-bootstrap';
 import UserManagement from './Components/UserMgt/UserManagement';
+import AuthorizeRoles from './Components/AuthorizeRole';
+import RoleManagement from './Components/RoleManagement';
+
 
 // import {NavBar, Nav, NavItem} from 'react-bootstrap';
 
@@ -25,9 +28,7 @@ class App extends Component {
     //     </ul>
     //     <Route exact path="/" component={Welcome} />
     //     <Route path="/secured" component={Secured} />
-    //     <Route path="/input" component={Inputter} />
-
-       
+    //     <Route path="/input" component={Inputter} />       
     //   </div>
     // </BrowserRouter>
     <Router>
@@ -36,6 +37,9 @@ class App extends Component {
         <li><Link to={'/'} className="nav-link"> NDB Home</Link></li>
         <li><Link to={'/secured'} className="nav-link">Authorize Users</Link></li>
         <li><Link to={'/usermanagement'} className="nav-link">User Management</Link></li>
+        <li><Link to={'/authroles'} className="nav-link">Authorize Roles</Link></li>
+        <li><Link to={'/rolemanagement'} className="nav-link">Role Management</Link></li>
+        
       </ul>
       
       <hr />
@@ -44,6 +48,8 @@ class App extends Component {
           <Route exact path='/' component={Welcome} />
           <Route path='/secured' component={Secured} />
           <Route path='/usermanagement' component={UserManagement} />
+          <Route path='/authroles' component={AuthorizeRoles} />
+          <Route path='/rolemanagement' component={RoleManagement} />
       </Switch>
     </div>
   </Router>

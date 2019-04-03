@@ -22,12 +22,12 @@ class InputUser extends Component {
       password:''
   }}
 componentDidMount = () => {  
-        const keycloak = Keycloak("/keycloak.json");
-        keycloak.init({ onLoad: 'login-required' }).success(authenticated => {
-          this.setState({ keycloak: keycloak });
-        }).error(err => {
-          alert(err);
-        });  
+        // const keycloak = Keycloak("/keycloak.json");
+        // keycloak.init({ onLoad: 'login-required' }).success(authenticated => {
+        //   this.setState({ keycloak: keycloak });
+        // }).error(err => {
+        //   alert(err);
+        // });  
     }
 
 
